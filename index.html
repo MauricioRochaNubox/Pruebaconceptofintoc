@@ -1,0 +1,41 @@
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Prueba SII</title>
+    <script src="https://js.fintoc.com/v1/"></script>
+  </head>
+  <body>
+    <script>
+      // Ir a https://app.fintoc.com para obtener su Public Key del ambiente productivo
+      const publicKey = 'pk_live_cAaTzd8DwCWzwsy4tV8D1-xJQrJeDCN8'
+      
+      function onSuccess(link) {
+        console.log('Cuenta conectada exitosamente');
+        console.log(link);
+      };
+      
+      function onExit() {
+        console.log('El usuario se salió');
+      };
+      
+      window.onload = () => {
+        const widget = window.Fintoc.create({
+          holderType: 'business',
+          product: 'invoices',
+          // Ir a https://webhook.site/ y pegar la URL generada para que les
+          // llegue el token
+          webhookUrl: 'https://webhook.site/2cf3c891-e508-49c1-becc-3e01b37dd6a3',
+          publicKey: publicKey,
+          onSuccess,
+          onExit,
+        });
+        widget.open();
+      }
+    </script>
+    <div id="app"></div>
+
+    <!-- built files will be auto injected -->
+  </body>
+</html>
