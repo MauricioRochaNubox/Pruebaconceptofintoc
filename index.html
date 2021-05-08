@@ -8,8 +8,7 @@
   </head>
   <body>
     <script>
-      // Ir a https://app.fintoc.com para obtener su Public Key del ambiente productivo
-      const publicKey = 'pk_live_cAaTzd8DwCWzwsy4tV8D1-xJQrJeDCN8'
+      const publicKey = 'pk_live_VPfbVojX4Z5LGTfyYTmL1xxA2Gt1Lju5'
       
       function onSuccess(link) {
         console.log('Cuenta conectada exitosamente');
@@ -24,9 +23,7 @@
         const widget = window.Fintoc.create({
           holderType: 'business',
           product: 'invoices',
-          // Ir a https://webhook.site/ y pegar la URL generada para que les
-          // llegue el token
-          webhookUrl: 'https://webhook.site/2cf3c891-e508-49c1-becc-3e01b37dd6a3',
+          webhookUrl: 'https://webhook.site/ab175a0a-4e8b-4bda-b28a-a0e2ac96c33d',
           publicKey: publicKey,
           onSuccess,
           onExit,
